@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax</title>
+    <!-- jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <!-- bootstrap css and js cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='ajax.js') }}"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">Search the World's Countries and Cities</h1>
+        <form id="myForm">
+            <input type="text" id="search" class="form-control mb-4" name="search" placeholder="Search">
+        </form>
+
+        <div class="dropdown d-inline">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Sort by
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item filtera" type="button" value="ASC">A-Z</button>
+                <button class="dropdown-item filterz" type="button" value="DESC">Z-A</button>
+            </div>
+        </div>
+        <div class="dropdown d-inline">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Show by
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" id="allCities" type="button">Cities</button>
+                <button class="dropdown-item" id="allCountries" type="button">Countries</button>
+            </div>
+        </div>
+        
+        <table class="table mt-4">  
+            <div id="error"></div>
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" id="nameVal"></th>
+                    <th scope="col" id="change">Continent</th>
+                    <th scope="col" id="cahnge1">Region</th>
+                </tr>
+            </thead>
+            <tbody id="countryList"></tbody>
+        </table>
+    </div>
+</body>
+
+</html>
